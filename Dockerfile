@@ -3,6 +3,5 @@ RUN apk update && apk upgrade --available && sync
 WORKDIR /app
 COPY . .
 FROM scratch
-COPY --from=builder /app/fsb /app/fsb
 EXPOSE ${PORT}
 ENTRYPOINT ["/app/fsb", "run"]
